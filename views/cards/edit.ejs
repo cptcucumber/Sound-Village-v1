@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="container"
+    <div class="row">
+        <h1 style="text-align: center">Edit <%= card.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/cards/<%= card._id %>/?_method=PUT", method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="card[name]" value="<%= card.name %>">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="card[image]" value="<%= card.image %>">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="card[description]" value="<%= card.description %>">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+            </div>
+            </form>
+            <a href=/cards>Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
