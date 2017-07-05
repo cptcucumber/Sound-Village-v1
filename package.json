@@ -2,6 +2,10 @@
   "name": "v1",
   "version": "1.0.0",
   "description": "YelpCamp v1",
+  "version": ,
+  "engines": {
+    "node": "4.7.3"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
