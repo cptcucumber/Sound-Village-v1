@@ -18,10 +18,10 @@ var commentRoutes = require("./routes/comments.js"),
     
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public")); //__dirname is the entire path
 app.use(methodOverride("_method"));
-app.use(flash()); // execute the variable i.e. the package
+app.use(flash());
 //seedDB();
 
 //passport configuration
