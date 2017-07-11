@@ -16,11 +16,9 @@ var commentRoutes = require("./routes/comments.js"),
     cardRoutes = require("./routes/cards.js"),
     indexRoutes = require("./routes/index.js");
     
-    
-    console.log(process.env.DATABASEURL)
-// mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://dinlin:tank1998@ds043027.mlab.com:43027/experiment")
-process.env.DATABASEURL
+    var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+    mongoose.connect(url)
+
 
 
 
