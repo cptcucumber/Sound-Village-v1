@@ -1,7 +1,5 @@
 <% include ../partials/header %>
 
-<h4><%= currentUser %></h4>
-
 <div class="container">
     <header class="jumbotron">
         <div="container">
@@ -11,21 +9,20 @@
         </div>
     </header>
     
-   <div class="row" style="display: flex; flexwrap: wrap;">
-        <% cards.forEach(function(card){ %>
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnail">
-                    <img src="<%= card.image %>">
-                    <div class="caption">
-                        <h4> <%= card.name %> </h4>   
-                    </div>
-                    <p>
-                        <a href="/cards/<%= card._id %>" class="btn btn-primary">More Info</a>
-                    </p>
-                <div>
+   <div class='row text-center flex-wrap'>
+    <% cards.forEach(function(card) { %>
+        <div class='col-md-3 col-sm-6'>
+            <div class='thumbnail'>
+                <div style="background-image: url(<%= card.image %>)"></div>
+                <div class='caption'>
+                    <h4><%= card.name %></h4>
+                </div>
+                <p>
+                    <a href='/cards/<%= card._id %>' class='btn btn-primary'>More Info</a>
+                </p>
             </div>
-        <% }); %> 
-    </div>
+        </div>
+    <% }); %>
 </div>
 
 <% include ../partials/footer %>

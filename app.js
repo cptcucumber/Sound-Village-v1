@@ -16,11 +16,10 @@ var commentRoutes = require("./routes/comments.js"),
     cardRoutes = require("./routes/cards.js"),
     indexRoutes = require("./routes/index.js");
     
-    var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+    console.log("process.env.DATABASEURL is")
+    console.log(process.env.DATABASEURL)
+    var url = process.env.DATABASEURL
     mongoose.connect(url)
-
-
-
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
