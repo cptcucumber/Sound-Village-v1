@@ -16,7 +16,8 @@ var commentRoutes = require("./routes/comments.js"),
     cardRoutes = require("./routes/cards.js"),
     indexRoutes = require("./routes/index.js");
     
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://dinlin:tank1998@ds043027.mlab.com:43027/experiment")
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public")); //__dirname is the entire path
@@ -31,6 +32,7 @@ app.use(require("express-session")(
     resave: false,
     saveUninitialize: false 
 }))
+
 app.use(passport.initialize())
 app.use(passport.session())
 passport.use(new LocalStrategy(User.authenticate())) //method from passport-local-mongoose
