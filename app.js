@@ -17,9 +17,14 @@ var commentRoutes = require("./routes/comments.js"),
     indexRoutes = require("./routes/index.js");
     
     console.log("process.env.DATABASEURL is")
-    console.log(process.env.DATABASEURL)
-    var url = process.env.DATABASEURL
+    console.log(process.env.DATABASEURL);
+    if(!process.env.DATABASEURL){
+        var url = 'mongodb://localhost/my_database'
+    } else {
+        var url = process.env.DATABASEURL
+    }
     mongoose.connect(url)
+    mongoose.connect('mongodb://localhost/my_database')
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
